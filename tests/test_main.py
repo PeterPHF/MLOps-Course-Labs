@@ -15,7 +15,7 @@ Run with:
 #         and asserts the result is 0 or 1
 #         Hint: import predict_churn from app.model_utils
 
-# TODO 2 (bonus): Write another function test with edge-case inputs
+# TODO 2 (bonus): Write another function test with a `with pytest.raises(...):`
 
 
 # ---------------------------------------------------------------------------

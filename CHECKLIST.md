@@ -34,7 +34,6 @@
 
 - [ ] Start the server: `uv run litestar --app main:app run --reload`
 - [ ] Open <http://localhost:8000/schema/swagger>
-- [ ] **Take a screenshot of the Swagger UI**
 
 ## Tests (`tests/test_main.py`)
 
@@ -44,11 +43,10 @@
 - [ ] TODO 5: Endpoint test for `GET /`
 - [ ] Run: `uv run pytest tests/ -v --cov=app --cov=main --cov-report=term-missing`
 - [ ] **Coverage is above 70%**
-- [ ] **Take a screenshot of the results + coverage**
 
 ## Bonus
 
-- [ ] TODO 2 (tests): Extra function test with edge cases
+- [ ] TODO 2 (tests): Extra function test with a `with pytest.raises(...):`
 - [ ] TODO 6 (tests): Test invalid input returns 400
 - [ ] Set up HyperDX for live logs
 
@@ -56,8 +54,8 @@
 
 - [ ] Commit the `uv.lock` file (**points will be deducted if missing**)
 - [ ] Push to your fork
-- [ ] **Upload** the Swagger UI screenshot
-- [ ] **Upload** the test results and coverage screenshot
+- [ ] **Show me** the Swagger UI
+- [ ] **Show me** the test results and coverage
 - [ ] **Upload** the link to your repo
 
 ---
