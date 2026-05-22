@@ -84,4 +84,4 @@ jobs:
             docker pull "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY-23:latest"
             docker stop churn-prediction || true
             docker rm churn-prediction || true
-            docker run -d -p 443:8005 --name churn-prediction "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY-23:latest"
+            docker run -d -p 443:8000 --name churn-prediction "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY-23:latest"
