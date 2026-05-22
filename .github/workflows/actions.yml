@@ -10,8 +10,7 @@ env:
   AWS_REGION: ${{ vars.AWS_REGION }}
   AWS_ACCOUNT_ID: ${{ vars.AWS_ACCOUNT_ID }}
   ECR_REPOSITORY: churn-prediction
-  IMAGE_URI: "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY-23"
-
+  
 
 jobs:
   test:
@@ -64,6 +63,7 @@ jobs:
 
       - name: Push Docker Image to ECR
         run: |
+          IMAGE_URI="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY-23:latest"
           docker tag "$ECR_REPOSITORY" "$IMAGE_URI"
           docker push "$IMAGE_URI"
 
@@ -81,7 +81,7 @@ jobs:
           envs: AWS_REGION,AWS_ACCOUNT_ID
           script: |
             aws ecr get-login-password --region "$AWS_REGION" | docker login --username AWS --password-stdin "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com"
-            docker pull "$IMAGE_URI"
+            docker pull "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY-23:latest"
             docker stop churn-prediction || true
             docker rm churn-prediction || true
-            docker run -d -p 80:8005 --name churn-prediction "$IMAGE_URI"
+            docker run -d -p 80:8005 --name churn-prediction "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY-23:latest"
