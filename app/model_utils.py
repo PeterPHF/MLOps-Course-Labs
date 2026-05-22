@@ -4,15 +4,11 @@ Model loading and prediction logic.
 The model must be loaded ONCE at module level, NOT inside the predict function.
 """
 
-<<<<<<< HEAD
 from pathlib import Path
 import warnings
 import joblib
 warnings.filterwarnings("ignore", category=UserWarning, module="sklearn")
-=======
 # TODO 1: Load your serialized churn model (and preprocessor if any) from data/
-model = ...
->>>>>>> 0aae8b7e10987164221cf76b5e30ddfedf7c8b29
 
 # TODO 1: Load your serialized churn model from data/model.joblib
 PROJECT_ROOT = Path(__file__).resolve().parent.parent 
@@ -44,12 +40,7 @@ def predict_churn(features: list[float]) -> int:
 
 
 if __name__ == "__main__":
-<<<<<<< HEAD
-    # TODO 3: Replace with sample features that match your model
-    sample = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 0.2]
-=======
     # TODO 5: Replace with sample features that match your model
     sample = []
->>>>>>> 0aae8b7e10987164221cf76b5e30ddfedf7c8b29
     print(f"Input:      {sample}")
     print(f"Prediction: {predict_churn(sample)}")
