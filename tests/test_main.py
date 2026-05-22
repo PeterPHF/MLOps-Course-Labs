@@ -22,7 +22,7 @@ def test_predict_churn_returns_binary_label() -> None:
     assert prediction in (0, 1)
 
 
-# TODO 2 (bonus): Write another function test with edge-case inputs
+# TODO 2 (bonus): Write another function test with a `with pytest.raises(...):`
 
 
 # ---------------------------------------------------------------------------
